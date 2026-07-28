@@ -40,3 +40,26 @@ But edit conanfile.py::generate to switch to `CMakeDeps`, and it works.
 * Python 3.14.5
 * CMake versions 4.3.0 and 4.4.20260625-gcdcc758
 * Ninja version 1.13.1
+
+clang profile:
+```
+[settings]
+arch=x86_64
+build_type=Release
+compiler=clang
+compiler.cppstd=20
+compiler.libcxx=libstdc++11
+compiler.version=22
+os=Linux
+
+[buildenv]
+CC=/usr/local/bin/clang
+CXX=/usr/local/bin/clang++
+```
+
+global.conf:
+
+```
+tools.cmake.cmaketoolchain:generator="Ninja"
+core.graph:compatibility_mode=optimized
+```
