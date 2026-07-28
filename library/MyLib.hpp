@@ -1,0 +1,1 @@
+int Combine(int A, int B);

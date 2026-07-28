@@ -12,15 +12,14 @@ target_link_libraries(MyLib PRIVATE spdlog::spdlog)
 
 target_sources(MyLib
     PUBLIC
-        FILE_SET CXX_MODULES
+        FILE_SET HEADERS
         FILES
-            MyLib.cppm
+            MyLib.hpp
     PRIVATE
-        FILE_SET privmod TYPE CXX_MODULES
+        FILE_SET SOURCES
         FILES
             Impl.cpp
 )
-target_compile_features(MyLib PUBLIC cxx_std_20)
 
 #---------------------------------------------------------------------------------------------------
 # Installation (based on: https://crascit.com/2024/04/04/cxx-modules-cmake-shared-libraries/)
@@ -30,6 +29,8 @@ install(TARGETS MyLib
     EXPORT MyLib-targets
     FILE_SET CXX_MODULES
         DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/MyLib/src
+    FILE_SET HEADERS
+        DESTINATION ${CMAKE_INSTALL_LIBDIR}/include
 )
 install(EXPORT MyLib-targets
     DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/MyLib

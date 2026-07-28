@@ -1,6 +1,4 @@
-module;
 #include <spdlog/spdlog.h>
-module MyLib:Impl;
 
 int Combine(int A, int B)
 {

@@ -1,4 +1,4 @@
-import MyLib;
+#include "MyLib.hpp"
 
 int main()
 {

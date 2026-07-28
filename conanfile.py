@@ -17,10 +17,10 @@ class Consumer(ConanFile):
         CMakeToolchain(self).generate()
         
         # works:
-        # CMakeDeps(self).generate()
+        CMakeDeps(self).generate()
 
         # doesn't work:
-        CMakeConfigDeps(self).generate()
+        # CMakeConfigDeps(self).generate()
 
     def build(self):
         cmake = CMake(self)
