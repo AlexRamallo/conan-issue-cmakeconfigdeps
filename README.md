@@ -31,3 +31,12 @@ CMake Error at CMakeLists.txt:8 (find_package):
 ```
 
 But edit conanfile.py::generate to switch to `CMakeDeps`, and it works.
+
+## Environment
+
+* Linux
+* clang version 22.1.1
+* Conan version 2.31.1
+* Python 3.14.5
+* CMake versions 4.3.0 and 4.4.20260625-gcdcc758
+* Ninja version 1.13.1
